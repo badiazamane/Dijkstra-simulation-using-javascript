@@ -10,11 +10,18 @@
 <body>
 
     <div class="sidenav">
-    <button type="button" id="buttonOne"  this.onclick=null;>Create vertex</button>
-    <h3 class="reply" id="info" style="display:none ;">Write the start Vertex <br> E.g. "A"</h3>
-  <input type="text"  id="reply2" class="reply"  placeholder="Write the start Vertex" style="display:none; padding: 20px 14px; margin-left: 20px;"/>
+    <button type="button" id="buttonOne"  >Create vertex</button>
+    <h3 class="hide" id="info" style="display:none ;">Write the start Vertex <br> E.g. "A"</h3>
+  <input type="text"  id="reply2" class="hide"  placeholder="Write the start Vertex" style="display:none; padding: 20px 14px; margin-left: 20px;"/>
     <button type="button" id="buttonTwo" this.onclick=null; >Implementing dijkstra</button>
-    </div>
+    <table border="1" id="myTable" class="hideTwo" style="display:none;">
+      <tr>
+          <th>The vertex</th>
+          <th>The previous vertex</th>
+          <th>The shortest distance from the start vertex</th>
+      </tr>
+    </table>  
+  </div>
 
     <div class="content">
     <canvas id="myCanvas" width="1245" height="720" ></canvas>
@@ -26,5 +33,7 @@
 </body>
 </html>
 
+    
+  
 
 
