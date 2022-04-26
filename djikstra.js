@@ -115,7 +115,7 @@ function down(e) {
 
 
 buttonOne.addEventListener("click", function() {
-    const elements = document.getElementsByClassName("reply");
+    const elements = document.getElementsByClassName("hide");
     
     for (var i = 0; i < elements.length; i++){
     if (elements[i].style.display === 'none') {
@@ -162,11 +162,22 @@ while (Object.keys(unvisitedVertices).length !== 0 || unvisitedVertices.construc
     delete unvisitedVertices[currentVertex];
 
 }
-
-console.info("\nThe vertex   |  The previous vertex  |  The shortest distance from the start vertex ");
 for (let Y of Object.keys(thePreviousvertex)){
-    console.log(Y,"           |            ",thePreviousvertex[Y][0],"        |                 ",thePreviousvertex[Y][1]);
+let tbl = document.getElementById("myTable");
+        let row = tbl.insertRow();
+        let c1 = row.insertCell();
+        let c2 = row.insertCell();
+        let c3 = row.insertCell();
+        c1.innerHTML =Y;
+        c2.innerHTML =thePreviousvertex[Y][0];
+        c3.innerHTML =thePreviousvertex[Y][1];
 }
+const element = document.getElementById("myTable");
+if (element.style.display === 'none') {
+    element.style.display = 'block';
+} else {
+    element.style.display = 'none';}
+
 });
 
 canv.onmousemove = move;
