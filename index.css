@@ -1,0 +1,65 @@
+
+#myCanvas {
+    margin-top: 15px;
+    margin-left: 50px; 
+    background-color: #6f97A8;
+    border:2px solid #686262;
+    border-radius: 10px;
+}
+
+
+#info {
+  color: #686262;
+  margin-left: 20px;
+
+}
+
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e4f2f8;
+
+  }
+  
+  /* Style the side navigation */
+  .sidenav {
+      height: 96%;
+      width: 248px;
+      position: fixed;
+      margin-top: 14px;
+      margin-left: 10px;
+      z-index: 1;
+      border:2px solid #686262;
+      background-color: #fcfac6 ;
+      border-radius: 10px;
+ 
+    }
+    
+    
+    /* Side navigation links */
+  .sidenav button {
+    border: 2px solid #020202;
+    color: #686262;
+    height: 12%;
+    width: 80%;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: #6f97A8;
+ 
+  }
+  
+  /* Change color on hover */
+  .sidenav button:hover {
+    background-color: rgb(242, 235, 235);
+    color: rgb(8, 8, 8);
+  }
+  
+  /* Style the content */
+  .content {
+    margin-left: 200px;
+    padding-left: 20px;
+  }
