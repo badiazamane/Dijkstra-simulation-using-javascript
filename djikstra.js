@@ -4,6 +4,7 @@ const canv = document.querySelector('canvas');
 const context = canv.getContext('2d');
 const buttonOne = document.getElementById("buttonOne");
 const buttonTwo = document.getElementById("buttonTwo");
+const buttonThree = document.getElementById("buttonTree");
 
 let MyGraph={};
 let unvisitedVertices={};
@@ -11,12 +12,17 @@ let thePreviousvertex={};
 var nodes = [];
 var edges = [];
 var selection = undefined;
+var val;
 let i=0;
-
+// function for founding the property with its value
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
+//  function for generating random values, i have used it here in this application to generate value for edges randomly between 1 and 10
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
-
+//  function to find the selected vertex 
 function within(x, y) {
     return nodes.find(n => {
         return x > (n.x - n.radius) && 
@@ -62,7 +68,7 @@ function up(e) {
     draw();
 }
 
-
+// Draw edges between selected Vertices + Drawing Vertices which are stored in the array of objects [{Nodes}]
 function draw() {
     context.clearRect(0, 0, canv.width ,  canv.height);
 
@@ -111,9 +117,6 @@ function down(e) {
         draw();
     }
 }
-
-
-
 buttonOne.addEventListener("click", function() {
     const elements = document.getElementsByClassName("hide");
     
@@ -126,10 +129,23 @@ buttonOne.addEventListener("click", function() {
 });
 
 buttonTwo.addEventListener("click",function(){
-    const val = document.querySelector('input').value;
+
+    const elements1 = document.getElementsByClassName("hide1");
+    for (var i = 0; i < elements1.length; i++){
+    if (elements1[i].style.display === 'none') {
+        elements1[i].style.display = 'block';
+    } else {
+        elements1[i].style.display = 'none';}
+    }
+    const elements = document.getElementsByClassName("hide");
+    for (var i = 0; i < elements.length; i++){
+        elements[i].style.display = 'none';
+    }
+
+    val = document.querySelector('input').value;
     if(unvisitedVertices.hasOwnProperty(val)){
         unvisitedVertices[val]=0;
-    }
+    }else{"invalid Vertex"};
 
     console.log("Edges : ",edges);
     console.log("MyGraph : ",MyGraph);
@@ -139,9 +155,7 @@ buttonTwo.addEventListener("click",function(){
 
 
 // implementation of Djikstra algorithm
-function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
-}
+
 
 while (Object.keys(unvisitedVertices).length !== 0 || unvisitedVertices.constructor !== Object){
     const minDistance =Math.min.apply(Math,Object.values(unvisitedVertices));
@@ -178,6 +192,43 @@ if (element.style.display === 'none') {
 } else {
     element.style.display = 'none';}
 
+});
+
+// Display and calculate the shortest distance to specific vertex
+buttonThree.addEventListener("click",function(){
+    context.clearRect(0, 0, canv.width ,  canv.height);
+    draw();
+    let val1 = document.getElementById("input1").value;      
+    
+    document.getElementById("info1").innerHTML = ("The shortest distance from the start Vertex to " +val1+" is "+ thePreviousvertex[val1][1]);
+    document.getElementById("info2").innerHTML ="Path : "+ val1 +"->";
+    let extraLoopCondition=false;
+    while((thePreviousvertex[val1][0] !=val && thePreviousvertex[val1][1]!=0 ) || !extraLoopCondition){
+
+        let temp1=(nodes[alphabet.indexOf(val1)]);
+        let temp2=(nodes[alphabet.indexOf(thePreviousvertex[val1][0])]);
+        
+        context.beginPath();
+        context.moveTo(temp1.x, temp1.y);
+        context.lineTo(temp2.x, temp2.y);
+        context.strokeStyle = "#ff0000";
+        context.stroke();
+        document.getElementById("info2").innerHTML += thePreviousvertex[val1][0] +"->";
+        val1 = thePreviousvertex[val1][0];
+
+        if(!(thePreviousvertex[val1][0] !=val && thePreviousvertex[val1][1]!=0 )) {
+            let temp1=(nodes[alphabet.indexOf(val1)]);
+            let temp2=(nodes[alphabet.indexOf(thePreviousvertex[val1][0])]);
+            context.moveTo(temp1.x, temp1.y);
+            context.lineTo(temp2.x, temp2.y);
+            context.strokeStyle = "#ff0000";
+            context.stroke();
+            extraLoopCondition = true;
+    
+        }
+
+    }   
+    document.getElementById("info2").innerHTML += val;
 });
 
 canv.onmousemove = move;
