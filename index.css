@@ -47,7 +47,7 @@
       border:2px solid #686262;
       background-color: #fcfac6 ;
       border-radius: 10px;
- 
+      overflow: auto;
     }
     
     
