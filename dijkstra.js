@@ -154,7 +154,7 @@ buttonTwo.addEventListener("click",function(){
 
 
 
-// implementation of Djikstra algorithm
+// implementation of Dijkstra algorithm
 
 
 while (Object.keys(unvisitedVertices).length !== 0 || unvisitedVertices.constructor !== Object){
