@@ -9,10 +9,10 @@
 </head>
 <body>
 
-    <div class="sidenav">
+  <div class="sidenav">
     <button type="button" id="buttonOne"  >The start vertex</button>
     <h3 class="hide" id="info" style="display:none ;">Write the start Vertex <br> E.g. "A"</h3>
-  <input type="text"  id="reply2" class="hide"  placeholder="Write the start Vertex" style="display:none; padding: 20px 14px; margin-left: 20px;"/>
+    <input type="text"  id="reply2" class="hide"  placeholder="Write the start Vertex" style="display:none; padding: 20px 14px; margin-left: 20px;"/>
     <button type="button" id="buttonTwo" this.onclick=null; >Implementing dijkstra</button>
     <table border="1" id="myTable" class="hideTwo" style="display:none;">
       <tr>
@@ -20,7 +20,12 @@
           <th>The previous vertex</th>
           <th>The shortest distance from the start vertex</th>
       </tr>
-    </table>  
+    </table>
+    <h3 class="hide1" id="info1" style="display:none ; ">Write the Vertex label <br>to see the shortest distance to it</h3>
+    <h3 class="hide1" id="info2" style="display:none ; "></h3>
+    <input type="text"  id="input1" class="hide1"  placeholder="Write the Vertex label " style="display:none; padding: 20px 14px; margin-left: 20px;"/> 
+    <button type="button" id="buttonTree" style="height: 15%;"  >the shortest distance to specific vertex</button>
+    
   </div>
 
     <div class="content">
