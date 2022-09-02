@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dijkstra</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-
-  <div class="sidenav">
-    <button type="button" id="buttonOne"  >The start vertex</button>
-    <h3 class="hide" id="info" style="display:none ;">Write the start Vertex <br> E.g. "A"</h3>
-    <input type="text"  id="reply2" class="hide"  placeholder="Write the start Vertex" style="display:none; padding: 20px 14px; margin-left: 20px;"/>
-    <button type="button" id="buttonTwo" this.onclick=null; >Implementing dijkstra</button>
-    <table border="1" id="myTable" class="hideTwo" style="display:none;">
-      <tr>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="sidenav">
+      <button type="button" id="buttonOne">The start vertex</button>
+      <h3 class="hide" id="info" style="display: none">
+        Write the start Vertex <br />
+        E.g. "A"
+      </h3>
+      <input
+        type="text"
+        id="reply2"
+        class="hide"
+        placeholder="Write the start Vertex"
+        style="display: none; padding: 20px 14px; margin-left: 20px"
+      />
+      <button type="button" id="buttonTwo" this.onclick="null;">
+        Implementing dijkstra
+      </button>
+      <table border="1" id="myTable" class="hideTwo" style="display: none">
+        <tr>
           <th>The vertex</th>
           <th>The previous vertex</th>
           <th>The shortest distance from the start vertex</th>
-      </tr>
-    </table>
-    <h3 class="hide1" id="info1" style="display:none ; ">Write the Vertex label <br>to see the shortest distance to it</h3>
-    <h3 class="hide1" id="info2" style="display:none ; "></h3>
-    <input type="text"  id="input1" class="hide1"  placeholder="Write the Vertex label " style="display:none; padding: 20px 14px; margin-left: 20px;"/> 
-    <button type="button" id="buttonTree" style="height: 15%;"  >the shortest distance to specific vertex</button>
-    
-  </div>
-
-    <div class="content">
-    <canvas id="myCanvas" width="1245" height="720" ></canvas>
+        </tr>
+      </table>
+      <h3 class="hide1" id="info1" style="display: none">
+        Write the Vertex label <br />to see the shortest distance to it
+      </h3>
+      <h3 class="hide1" id="info2" style="display: none"></h3>
+      <input
+        type="text"
+        id="input1"
+        class="hide1"
+        placeholder="Write the Vertex label "
+        style="display: none; padding: 20px 14px; margin-left: 20px"
+      />
+      <button type="button" id="buttonTree" style="height: 15%">
+        the shortest distance to specific vertex
+      </button>
     </div>
-    
-    <script src="dijkstra.js">
-    </script> 
-
-</body>
+    <div class="content">
+      <span class="instructions">see the instructions </span>
+      <p class="hide-instructions">
+        1- Click one time on the canvas below to create a new vertex
+        <br />2- Click one time inside the vertex to select it, After the
+        selection Click on the other vertex to create an edge between them
+        <br />3- To move the vertex click and hold the mouse on the vertex you
+        want to move it, But you need to take on considerations that you &nbsp
+        &nbsp &nbsp have not selected another vertex unless you are going to
+        creat a new vertex instead of moving the vertex you want to move.<br />
+        <b>After creating your graph</b><br />
+        4- Click in the button the start vertex and choose your start vertex
+      </p>
+      <canvas id="myCanvas" width="1245" height="720"></canvas>
+    </div>
+    <script src="dijkstra.js"></script>
+  </body>
 </html>
-
-    
-  
-
-

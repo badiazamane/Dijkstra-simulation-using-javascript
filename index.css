@@ -1,17 +1,51 @@
-
-#myCanvas {
-    margin-top: 15px;
-    margin-left: 50px; 
-    background-color: #6f97A8;
-    border:2px solid #686262;
-    border-radius: 10px;
+.content .instructions {
+  position: absolute;
+  top: 15px;
+  left: 45%;
+  z-index: 2;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding: 25px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  text-transform: capitalize;
+  box-shadow: 1px 1px 3px black;
+}
+.hide-instructions {
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  right: 15px;
+  z-index: 2;
+  display: none;
+  font-size: 1.3rem;
+  line-height: 2.8rem;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
 }
 
+.instructions:hover + .hide-instructions {
+  display: block !important;
+}
+.content {
+  position: relative;
+}
+
+#myCanvas {
+  width: 100%;
+  /* padding-left: 20px; */
+  position: relative;
+  margin-top: 15px;
+  background-color: #f8eed1;
+  /* border: 2px solid #686262; */
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px black;
+}
 
 #info {
   color: #686262;
   margin-left: 20px;
-
 }
 #myTable {
   margin-top: 14px;
@@ -21,59 +55,53 @@
 
 #myTable th {
   border: 1px solid #ddd;
-  padding: 8px; 
-  color: #686262;
-  background-color: #6f97A8;
+  padding: 8px;
+  color: #484848;
+  background-color: #e9b949;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 248px 1245px;
+  gap: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #e4f2f8;
+/* Style the side navigation */
+.sidenav {
+  height: 720px;
+  width: 100%;
+  /* position: fixed; */
+  margin-top: 14px;
+  margin-left: 10px;
+  /* border: 2px solid #ffffff; */
+  background-color: #f8eed1;
+  border-radius: 10px;
+  overflow: auto;
+  box-shadow: 1px 1px 3px black;
+}
 
-  }
-  
-  /* Style the side navigation */
-  .sidenav {
-      height: 96%;
-      width: 248px;
-      position: fixed;
-      margin-top: 14px;
-      margin-left: 10px;
-      z-index: 1;
-      border:2px solid #686262;
-      background-color: #fcfac6 ;
-      border-radius: 10px;
-      overflow: auto;
-    }
-    
-    
-    /* Side navigation links */
-  .sidenav button {
-    border: 2px solid #020202;
-    color: #686262;
-    height: 12%;
-    width: 80%;
-    text-align: center;
-    font-size: 25px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    background-color: #6f97A8;
- 
-  }
-  
-  /* Change color on hover */
-  .sidenav button:hover {
-    background-color: rgb(242, 235, 235);
-    color: rgb(8, 8, 8);
-  }
-  
-  /* Style the content */
-  .content {
-    margin-left: 200px;
-    padding-left: 20px;
-  }
+/* Side navigation links */
+.sidenav button {
+  /* border: 2px solid #ffffff; */
+  color: #000000;
+  box-shadow: 1px 1px 3px black;
+  height: 12%;
+  width: 80%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: #e9b949;
+  text-transform: capitalize;
+}
+
+/* Change color on hover */
+.sidenav button:hover {
+  background-color: rgb(242, 235, 235);
+  color: rgb(8, 8, 8);
+}
